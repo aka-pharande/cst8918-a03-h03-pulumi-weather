@@ -1,0 +1,2 @@
+config:
+  cst8918-a03-infra:appPath: /home/stefeena/cst8918-a03-h03-pulumi-weather/app
