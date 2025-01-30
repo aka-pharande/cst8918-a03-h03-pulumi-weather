@@ -1,4 +1,0 @@
-config:
-  cst8918-a03-infra:imageTag: v0.3.0
-  cst8918-a03-infra:weatherApiKey:
-    secure: AAABAH1Wq7Qr37TNQc+YIMghtiLt//NJkm4tFbWw64vBOfN471FSQKHe8qHRr/tHzKilqovOqc4NbAAD0Xs5wg==

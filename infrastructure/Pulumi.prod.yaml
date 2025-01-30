@@ -1,22 +1,11 @@
 config:
-  cst8918-a03-infra:imageTag: v0.1.0
   azure-native:location: westus3
   cst8918-a03-infra:appPath: ../
-<<<<<<< HEAD
-  cst8918-a03-infra:containerPort: "80"
-  cst8918-a03-infra:cpu: "1"
-  cst8918-a03-infra:memory: "2"
-  cst8918-a03-infra:prefixName: cst8918a03vell0021
-  cst8918-a03-infra:publicPort: "80"
-  pulumi:tags:
-    pulumi:template: typescript
-=======
   cst8918-a03-infra:containerPort: '80'
   cst8918-a03-infra:publicPort: '80'
   cst8918-a03-infra:cpu: '1'
   cst8918-a03-infra:memory: '2'
   cst8918-a03-infra:prefixName: 'cst8918a03vell0021'
-  cst8918-a03-infra:imageTag: 'v0.2.0'
+  cst8918-a03-infra:imageTag: 'v0.3.0'
   cst8918-a03-infra:weatherApiKey:
     secure: AAABAPe8OfB6xw+hSzWiKZ4n+zHjQIdNHKhQyFJvLaA8srasWO977EJz+apOmSv38GakGNi6fO0tbkeBNYcFlQ==
->>>>>>> 6a4084764cb5a6f7e10ea49905a5486cbb482ba8
