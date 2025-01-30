@@ -73,6 +73,14 @@ const redis = new cache.Redis(`${prefixName}-redis`, {
   },
 });
 
+// Extract the auth creds from the deployed Redis service
+const redisAccessKey = cache
+  .listRedisKeysOutput({ name: redis.name, resourceGroupName: resourceGroup.name })
+  .apply(keys => keys.primaryKey)
+
+// Construct the Redis connection string to be passed as an environment variable in the app container
+const redisConnectionString = pulumi.interpolate`rediss://:${redisAccessKey}@${redis.hostName}:${redis.sslPort}`
+
 // Create a container group in the Azure Container App service and make it publicly accessible.
 const containerGroup = new containerinstance.ContainerGroup(
   `${prefixName}-container-group`,
@@ -105,6 +113,10 @@ const containerGroup = new containerinstance.ContainerGroup(
           {
             name: "WEATHER_API_KEY",
             value: config.requireSecret("weatherApiKey"),
+          },
+          {
+            name: 'REDIS_URL',
+            value: redisConnectionString
           },
         ],
         resources: {
